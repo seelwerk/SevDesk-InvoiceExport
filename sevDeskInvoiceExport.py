@@ -80,7 +80,7 @@ def main():
         filename = invoice_number + ".pdf"
         invoice_path = os.path.join(year_directory, filename)
         if os.path.isfile(invoice_path) is False:
-            if invoice['status'] >= 200:
+            if invoice['status'] != '100':
                 logging.info("Getting Invoice: " + invoice_number)
                 get_invoice_pdf(invoice_id, invoice_path)
 
